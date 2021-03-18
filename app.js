@@ -14,10 +14,15 @@ button.addEventListener('click', function() {
 
 		name.innerHTML = nameValue
 		desc.innerHTML = 'The weather right now is ' + descValue + '.'
-		temp.innerHTML = 'The temperature is ' + tempValue + 'celsius.'
+		temp.innerHTML = tempValue + ' &#8451'
 		console.log(data)
 	})
-
-	.catch(err => alert('Please enter a city name'))
+	.catch(err => {
+		document.getElementById("errorMsg").innerHTML = 'Please enter a city name.';
+		if(nameValue === '') {
+			document.getElementById("errorMsg").innerHTML = ''
+		}
+	  })
+	//insert innerhtml
 
 })

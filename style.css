@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 *{
-    margin:0 auto;
-    padding:0;
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
 }
 
 body {
+    display:flex;
     background-image: url("/images/wolfgang-hasselmann-bR_-gllg7Bs-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,17 +17,25 @@ body {
 }
 
 .header {
-    margin: 0;
-    padding: 15px;
+    margin: 10px auto;
+    padding: 20px;
+    display:flex;
+    justify-content: center;
 }
 
 .container {
     display:flex;
-    justify-content: center;
     flex-direction: column;
-    margin: 0px auto;
-    width: 800px;
-    height: 600px;
+    margin: 0 auto;
+    width: 700px;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
 }
 
 input[type="text"] {
@@ -37,7 +44,7 @@ input[type="text"] {
     background-color: rgb(233, 233, 233);
     border:none;
     border-radius:5px;
-    margin:50px;
+    margin:40px;
     padding:10px 10px;
     color: black;
     font-size: 20px;
@@ -48,7 +55,7 @@ input:focus {
     outline:none;
 }
 
-.inputValue:focus, .inputValue:target{
+.inputValue:focus, .inputValue:target {
     border:none;
 }
 
@@ -65,10 +72,10 @@ input:focus {
 .results {
     display: flex;
     flex-direction: column;
-    width:600px;
-    height:300px;
+    width:100%;
+    height:380px;
     border: 2px solid white;
-    padding: 50px;
+    padding: 20px;
     border-radius:8px;
     backdrop-filter: blur(5px);
     text-align: center;
@@ -78,19 +85,19 @@ input:focus {
 .results::before {
     position:absolute;
     background-color: rgba(255, 255, 255, 0.650.78);
-
 }
-
 
 .name {
     font-size: 36px;
-    }
+}
+
 .weather-results p {
     padding: 15px 0;
 }
+
 .name {
     font-size: 36px;
-    }
+}
 
 .desc {
     font-size: 24px;
@@ -98,13 +105,39 @@ input:focus {
 }
 
 .temp {
-    font-size: 46px;
+    font-size: 50px;
     font-weight: 700;
     text-align: center;
-    color: white    ;
+    color: #fff;
 }
 
 #errorMsg {
-    font-size: 20px;
-    color: red;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(177, 0, 0);
+    text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+
+    body { 
+       max-width:500px; 
+    }
+
+    .container {
+        width:100%;
+        margin: 20px;
+    }
+
+    .input {
+        justify-content: center;
+        flex-direction: column;
+        margin: 40px;
+    }
+    
+    .results {
+        width: 100%;
+        margin: 5px 5px 20px 5px;
+        font-size: 12px;
+    }
 }

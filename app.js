@@ -3,6 +3,7 @@ const inputValue = document.querySelector('.inputValue')
 const name = document.querySelector('.name')
 const desc = document.querySelector('.desc')
 const temp = document.querySelector('.temp')
+const errorMsg = document.getElementById('errorMsg')
 
 button.addEventListener('click', function() {
 	fetch('http://api.openweathermap.org/data/2.5/weather?q='+inputValue.value+'&units=metric&appid=f68daa637db78a934561270ec0eff1fc')
@@ -18,11 +19,9 @@ button.addEventListener('click', function() {
 		console.log(data)
 	})
 	.catch(err => {
-		document.getElementById("errorMsg").innerHTML = 'Please enter a city name.';
-		if(nameValue === '') {
-			document.getElementById("errorMsg").innerHTML = ''
-		}
+		errorMsg.innerHTML = 'Please enter a city name.';
+		if (inputValue.value == "") {
+        errorMsg.style.display = "none"
+   		} 
 	  })
-	//insert innerhtml
-
 })
